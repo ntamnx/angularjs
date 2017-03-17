@@ -1,0 +1,46 @@
+<div div class="container" ng-controller="editNewController">
+    <div class="panel panel-default">
+        <div class="panel-heading"><label class="title">Cập nhật tin tức</label></div>
+        <div class="panel-body">
+            <form class="form-horizontal form-label-left" name="add" novalidate ng-submit="addSupervisor()">
+                <div class="form-group" ng-class="{'has-error': (add.email.$touched && add.email.$invalid) || (add.email.$invalid && add.$submitted) }">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-12">Email đăng nhập</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="email"  class="form-control" name="email" ng-model="email" placeholder="Email đăng nhập" required>
+                        <div ng-messages="add.email.$error" ng-show="add.email.$touched || add.$submitted">
+                            <span class="error" ng-message="required">Vui lòng nhập mật email</span>
+                            <span class="error" ng-message="email">Địa chỉ email không chính xác</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': (add.password.$touched && add.password.$invalid) || (add.$submitted && add.password.$invalid)}">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-12">Mật khẩu</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12" >
+                        <input type="password" class="form-control" ng-minlength="6" name="password" required ng-model="password" placeholder="Mật khẩu">
+                        <div ng-messages="add.password.$error" ng-show="add.password.$touched || add.$submitted">
+                            <span class="error" ng-message="required">Vui lòng nhập mật khẩu</span>
+                            <span class="error" ng-message="minlength">Mật khẩu ít nhất 6 ký tự</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error':(add.password_confirm.$touched && add.password_confirm.$invalid) || (add.$submitted && add.password_confirm.$invalid)}">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-12">Nhập lại mật khẩu</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12" >
+                        <input type="password" class="form-control" ng-minlength="6" name="password_confirm" ng-model="password_confirm" required placeholder="Nhập lại mật khẩu">
+                        <div ng-messages="add.password_confirm.$error" ng-show="add.password_confirm.$touched || add.$submitted">
+                            <span class="error" ng-message="required">Vui lòng nhập lại mật khẩu</span>
+                            <span class="error" ng-message="minlength">Mật khẩu ít nhất 6 ký tự</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-2">
+                        <button type="submit" class="btn btn-success">Gửi</button>
+                        <a  class="btn btn-default" href="#admin/new">Hủy bỏ</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

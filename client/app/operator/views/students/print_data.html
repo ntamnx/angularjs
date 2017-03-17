@@ -1,0 +1,23 @@
+<div class="container" ng-controller="executePrintData" >
+    <button class="btn btn-default" ng-click="printPDF()">In</button>
+    <div id="print-contain">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã học viên</th>
+                    <th>Tên học viên</th>
+                    <th>Ngày sinh</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="student in students">
+                    <td>{{$index + 1}}</td>
+                    <td>{{student.id}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.date}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

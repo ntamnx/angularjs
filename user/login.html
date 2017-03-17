@@ -1,0 +1,33 @@
+<div class="login_wrapper" ng-controller="loginController">
+    <div class="animate form login_form">
+        <section class="login_content">
+            <form name="login" novalidate ng-submit="loginForm()" >
+                <h1>Đăng nhập</h1>
+                <div class="form-group" ng-class="{'has-error': (login.email.$touched && login.email.$invalid) || (login.email.$invalid && login.$submitted) }">
+                    <input type="email" name="email" ng-model="email" style="margin: 5px 0px" class="form-control" placeholder="Email" required />
+                    <div ng-messages="login.email.$error" ng-show="login.email.$touched || login.$submitted">
+                        <span class="error" ng-message="required">Vui lòng nhập mật email</span>
+                        <span class="error" ng-message="email">Địa chỉ email không chính xác</span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': (login.password.$touched && login.password.$invalid) || (login.password.$invalid && login.$submitted) }">
+                    <input type="password" name="password" ng-model="password" style="margin: 5px 0px" class="form-control" placeholder="Mật khẩu" required />
+                    <div ng-messages="login.password.$error" ng-show="login.password.$touched || login.$submitted">
+                        <span class="error" ng-message="required">Vui lòng nhập mật khẩu</span>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn-default submit" type="submit">Đăng nhập</button>
+                    <a class="reset_pass" href="#reset-password">Quên mật khẩu</a>
+                </div>
+                <div class="clearfix"></div>
+                <div class="separator">
+                    <div class="clearfix"></div>
+                    <div>
+                        <p>Copyright © 2017, HOUHOU!</p>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>

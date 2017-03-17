@@ -1,0 +1,30 @@
+.error {
+  color: #a94442; }
+
+.panel-heading-fomart {
+  padding: 0px 15px !important; }
+
+.group-home-page {
+  height: 200px;
+  background-color: #5CB85C;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 10%; }
+
+#homePage .btn-group-home {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  position: relative; }
+  #homePage .btn-group-home .icon-bag {
+    position: absolute;
+    top: -8px;
+    color: white; }
+
+.confirm-reset {
+  margin-top: 50px; }
+
+/*# sourceMappingURL=style.css.map */

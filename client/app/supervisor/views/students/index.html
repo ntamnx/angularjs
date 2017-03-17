@@ -1,0 +1,43 @@
+<div class="container" ng-controller="indexStudentController">
+    <div class="panel panel-default">
+        <div class="panel-heading ">
+            <label class="tile">Danh sách học sinh</label>
+        </div>
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-xs-4"><a href="#supervisor/student/add" class="btn btn-default">Thêm mới</a></div>
+                <div class="col-sm-8 pull-right" >
+                    <form class="navbar-form navbar-left pull-right" role="search"  >
+                        <div class="form-group">
+                            <input type="text" class="form-control" ng-model="keyword" ng-change="pageChangeSearch(currentPage)" placeholder="Tìm kiếm" >
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Mã học viên</th>
+                        <th>Tên học viên</th>
+                        <th>Ngày sinh</th>
+                        <th>Chi tiết</th>
+                        <th>Thông tin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="student in students.slice(((currentPage - 1) * itemsPerPage), ((currentPage) * itemsPerPage))| filter: keyword">
+                        <td>{{$index + ((currentPage - 1) * itemsPerPage) + 1}}</td>
+                        <td>{{student.id}}</td>
+                        <td>{{student.name}}</td>
+                        <td>{{student.date| date: 'y-MM-dd'}}</td>
+                        <td><a class="btn btn-xs btn-default" href="#/supervisor/student/{{student.id}}">Xem</a></td>
+                        <td><a class="btn btn-xs btn-success" href="#/supervisor/student/profile/{{student.id}}">Xem</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <pagination total-items="totalItems" first-text="&laquo;&laquo;" previous-text="&laquo;" next-text="&raquo;"  last-text="&raquo;&raquo;" max-size="maxsize" boundary-links="true" ng-model="currentPage" ng-change="pageChange(currentPage)" class="pagination-sm" items-per-page="itemsPerPage"></pagination>
+        </div>
+    </div>
+</div>

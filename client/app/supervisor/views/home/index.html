@@ -1,0 +1,36 @@
+<div class="container" ng-controller="homeController" id="homePage">
+    <div class="panel panel-default">
+        <div class="panel-heading"><label class="title">Trang chủ</label></div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-3" ng-repeat="group in groups.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)">
+                    <a ng-click="studentNotComment()">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading text-center">
+                                <div class="group-button-student">
+                                    <label class="btn btn-default btn-group-home">Học sinh  <span class="badge bg-red icon-bag text-danger">6</span></label>
+                                </div>
+                            </div>
+                            <div class="panel-footer text-center">
+                                <label class="title">Lớp 15/09</label>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+                <pagination total-items="totalItems" first-text="&laquo;&laquo;" previous-text="&laquo;" next-text="&raquo;"  last-text="&raquo;&raquo;" max-size="maxsize" boundary-links="true" ng-model="currentPage"  class="pagination-sm" items-per-page="itemsPerPage"></pagination>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="panel panel-default" ng-repeat="student in groupStudent">
+                <div class="panel-heading"><label class="title">Nhóm 1 >> Nguyễn Văn Tú</label></div>
+                <div class="panel-body">
+                    <textarea class="form-control" rows="3" placeholder="Nhập nhận xét"></textarea>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-primary">Nhận xét</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
